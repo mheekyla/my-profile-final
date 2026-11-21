@@ -1,0 +1,275 @@
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito", Verdana, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #3b2430;
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #ffffff 0%, #fff5f8 100%);
+}
+
+a {
+    color: #a02a5c;
+}
+
+/* Heading font: Playfair Display, with web-safe serif fallbacks */
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+    padding: 2.5rem 1rem 1.5rem;
+    text-align: center;
+    background-color: #fde7f0;
+    border-bottom: 4px solid #f4b6cf;
+}
+
+header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.5rem;
+    color: #7a1f48;
+}
+
+.tagline {
+    margin: 0 0 1.25rem;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.4rem 1.1rem;
+    color: #7a1f48;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 2px solid #f4b6cf;
+    border-radius: 2rem;
+}
+
+nav a:hover {
+    background-color: #f9d3e3;
+}
+
+/* ---------- Main content and sections ---------- */
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 2px solid #f9d3e3;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(160, 42, 92, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    padding-bottom: 0.25rem;
+    font-size: 1.75rem;
+    color: #a02a5c;
+    border-bottom: 2px solid #f4b6cf;
+}
+
+h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.375rem;
+    color: #7a1f48;
+}
+
+/* ---------- Flexbox: photo next to bio ---------- */
+.bio {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.bio img {
+    flex-shrink: 0;
+    width: 14rem;
+    height: 18rem;
+    object-fit: cover;
+    object-position: center 35%;
+    border: 4px solid #f4b6cf;
+    border-radius: 7rem 7rem 1rem 1rem;
+    box-shadow: 0.5rem 0.5rem 0 #f9d3e3;
+}
+
+.bio-text {
+    flex: 1;
+}
+
+/* ---------- Things I Love (bulleted list) ---------- */
+.love-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.love-list li {
+    margin-bottom: 0.75rem;
+}
+
+.love-list strong {
+    color: #7a1f48;
+}
+
+/* ---------- Flexbox: passion project cards ---------- */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff5f8;
+    border: 2px solid #f4b6cf;
+    border-radius: 1rem;
+}
+
+.project img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid #f4b6cf;
+}
+
+/* Portrait cards (first two projects) */
+.project-portrait {
+    flex: 1 1 16rem;
+    max-width: 20rem;
+}
+
+.project-portrait img {
+    height: 26rem;
+    object-position: center top;
+}
+
+/* Landscape card (third project) */
+.project-wide {
+    flex: 1 1 100%;
+    flex-direction: row;
+}
+
+.project-link {
+    display: block;
+}
+
+.project-link:hover img {
+    opacity: 0.85;
+}
+
+.project-wide .project-link {
+    flex: 0 0 55%;
+    width: 55%;
+    border-right: 2px solid #f4b6cf;
+}
+
+.project-wide img {
+    height: 17rem;
+    object-position: center;
+    border-bottom: none;
+}
+
+.project-wide .project-body {
+    flex: 1;
+}
+
+.project-body {
+    padding: 1rem;
+}
+
+.project-body p {
+    margin: 0.5rem 0 0;
+}
+
+.project-date {
+    font-size: 0.875rem;
+    color: #a02a5c;
+}
+
+.note {
+    margin: 1.25rem 0 0;
+    font-size: 0.9375rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    background-color: #fde7f0;
+    border-top: 4px solid #f4b6cf;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ---------- Mobile: stack the layout ---------- */
+@media (max-width: 600px) {
+    .bio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-portrait {
+        flex: none;
+        width: 100%;
+    }
+
+    .project-wide {
+        flex: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project-wide .project-link {
+        flex: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #f4b6cf;
+    }
+
+    .project-wide img {
+        height: 12rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
